@@ -1,0 +1,447 @@
+<section id="setup">
+
+    <section>
+        <h2>Installation</h2>
+    </section>
+
+    <section>
+        <h3>Solution Stack</h3>
+        <ul>
+            <li><strong>LAMP</strong> (Linux / Apache / MySQL / PHP)</li>
+            <li><strong>WAMP</strong> (Windows / Apache / MySQL / PHP)</li>
+            <li><strong>MAMP</strong> (Macintosh / Apache / MySQL / PHP)</li>
+            <li><strong>XAMPP</strong> (X OS / Apache / MySQL / PHP / Perl)</li>
+        </ul>
+        <hr>
+        <ul>
+            <li><strong>WISA</strong> (Windows Server / Internet Information Services / SQL Server / ASP.NET)</li>
+            <li><strong>MEAN</strong> (MongoDB / ExpressJS / AngularJS / NodeJS)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>VirtualBox</h3>
+        <div class="container">
+            <div class="col">
+                <p>VirtualBox est un Hypervisor gratuit et Open Source permettant de créer et gérer des machines virtuelles.</p>
+                <p>Une machine virtuelle (ou Virtual Machine / VM) permet d'émuler un ordinateur.</p>
+            </div>
+            <div class="col">
+                <img src="assets/images/virtuabox.png" alt="VirtualBox">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Linux</h3>
+        <ul>
+            <li>Système d’exploitation</li>
+            <li>Nombreuses distributions autour d’un même noyau (kernel)</li>
+            <li>Sécurisé avec utilisateur root</li>
+            <li>Installation de paquets (archive) avec vérification des dépendances</li>
+            <li>Utilisé dans les systèmes embarqués, les routeurs, les serveurs, les super-ordinateurs...</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Debian</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Répertoire</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>/</td>
+                <td>Racine</td>
+            </tr>
+            <tr>
+                <td>/bin</td>
+                <td>Executables</td>
+            </tr>
+            <tr>
+                <td>/boot</td>
+                <td>Fichiers permettant le démarrage du système</td>
+            </tr>
+            <tr>
+                <td>/dev</td>
+                <td>Périphériques</td>
+            </tr>
+            <tr>
+                <td>/etc</td>
+                <td>Fichiers de configuration du système</td>
+            </tr>
+            <tr>
+                <td>/home</td>
+                <td>Répertoire de l’utilisateur</td>
+            </tr>
+            <tr>
+                <td>/lib</td>
+                <td>Bibliothèques de démarrage</td>
+            </tr>
+            <tr>
+                <td>/mnt</td>
+                <td>Partitions temporaires (CD, clé USB…)</td>
+            </tr>
+            <tr>
+                <td>/opt</td>
+                <td>Fichiers complémentaires des applications (LAMP par exemple)</td>
+            </tr>
+            <tr>
+                <td>/var</td>
+                <td>Données variables</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Debian - Commandes importantes</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Commande</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code class="language-shell">ls</code></td>
+                <td>Liste le contenu d’un repertoire. ls -la pour un affichage plus complet</td>
+            </tr>
+            <tr>
+                <td><code class="language-shell">cd</code></td>
+                <td>Change de répertoire</td>
+            </tr>
+            <tr>
+                <td><code class="language-shell">mkdir</code></td>
+                <td>Créer un nouveau répertoire</td>
+            </tr>
+            <tr>
+                <td><code class="language-shell">cp</code></td>
+                <td>Copier un fichier</td>
+            </tr>
+            <tr>
+                <td><code class="language-shell">mv</code></td>
+                <td>Déplacer un fichier</td>
+            </tr>
+            <tr>
+                <td><code class="language-shell">rm</code></td>
+                <td>Supprimer un fichier (ajouter -R pour un répertoire)</td>
+            </tr>
+            <tr>
+                <td><code class="language-shell">chmod</code></td>
+                <td>Modifier les permissions sur un fichier / répertoire</td>
+            </tr>
+            <tr>
+                <td><code class="language-shell">chown</code></td>
+                <td>Modifier le owner sur un fichier / répertoire</td>
+            </tr>
+            <tr>
+                <td><code class="language-shell">vim</code></td>
+                <td>Afficher / Créer / Editer un fichier</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3>Apache</h3>
+        <p>Permet l’accès à des documents via le protocole HTTP</p>
+        <canvas id="http-servers" style="height: 40vh;"></canvas>
+    </section>
+
+    <section>
+        <h3>Installation</h3>
+        <ul>
+            <li>Dans le navigateur de la VM : http://127.0.0.1</li>
+            <li>Ouvrir un terminal et se connecter sur le compte root</li>
+            <li><code class="language-shell">su root</code></li>
+            <li><code class="language-shell">sudo aptitude install apache2</code></li>
+            <li>Actualiser la page web du navigateur</li>
+        </ul>
+        <hr>
+        <h4>It works!</h4>
+    </section>
+
+    <section>
+        <h3>Installation</h3>
+        <ul>
+            <li>Eteindre la machine virtuelle</li>
+            <li>Dans  les paramètres de la machine virtuelle, changer la connexion réseau pour “Bridge Adapter”</li>
+            <li>Démarrer la machine virtuelle</li>
+            <li>Se connecter en root et executer la commande : <code class="language-shell">ifconfig</code></li>
+            <li>Copier l’adresse IP de eth0 et la coller dans le navigateur du poste (pas la machine virtuelle)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Configuration</h3>
+        <ul>
+            <li>/var/www/ : Répertoire racine du serveur web (contient les fichiers html, css, js...)</li>
+            <li>/etc/apache2/ : Contient les fichiers de configuration d’Apache</li>
+            <li>mods-available contient les modules disponibles et mods-enabled les modules activés (lien symbolique)</li>
+            <li>Idem avec sites-available et sites-enabled</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Configuration</h3>
+        <p>Activer un module :</p>
+        <pre><code class="language-shell">a2enmod [nom_du_module]</code></pre>
+        <p>Activer un site :</p>
+        <pre><code class="language-shell">a2ensite [nom_du_site]</code></pre>
+        <hr>
+        <p>Dans les 2 cas, penser à redémarrer Apache :</p>
+        <pre><code class="language-shell">/etc/init.d/apache2 restart</code></pre>
+        <p>OU</p>
+        <pre><code class="language-shell">service apache2 restart</code></pre>
+    </section>
+
+    <section>
+        <h3>Ajouter un site</h3>
+        <ol>
+            <li>Se connecter en root</li>
+            <li>Créer un nouveau fichier dans sites-available à l’aide de VIM :</li>
+        </ol>
+        <pre><code class="language-shell">cd /etc/apache2/sites-available
+cp 000-default.conf monsite.com.conf
+vim monsite.com.conf</code></pre>
+    </section>
+
+    <section>
+        <h3>Ajouter un site</h3>
+        <p>Ajouter après ServerAdmin le nom du site et un alias :</p>
+        <pre><code class="language-shell">ServerName monsite.com
+ServerAlias www.monsite.com</code></pre>
+        <p>Changer le chemin du site :</p>
+        <pre><code class="language-shell">DocumentRoot /var/www/monsite</code></pre>
+        <p>Activer le site avec la commande <code class="language-shell">sudo a2ensite monsite.com</code></p>
+        <p>Redémarrer Apache (un message indique que le dossier “monsite” n’existe pas)</p>
+    </section>
+
+    <section>
+        <h3>Ajouter un site</h3>
+        <p>Ajouter le site dans /var/www/</p>
+        <pre><code class="language-shell">cd /var/www
+mkdir monsite
+cd monsite
+vim index.html</code></pre>
+        <p>Modifier le fichier hosts de votre machine locale et tenter d’accèder à monsite.com depuis le navigateur</p>
+    </section>
+
+    <section>
+        <h3>Fichier .htaccess</h3>
+        <ul>
+            <li>Protéger un répertoire</li>
+            <li>Définir une extension de fichier par défaut</li>
+            <li>Pages d’erreurs personnalisées</li>
+            <li>Effectuer des redirections (pour refonte d’un site)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>PHP</h3>
+        <ul>
+            <li>Langage de script exécuté côté serveur</li>
+            <li>Langage simple à appréhender</li>
+            <li>Pas besoin de connaissances avancées en développement</li>
+            <li>Pas de structure définie (Framework)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Installation</h3>
+        <p>Modifier le nom du fichier index.html et remplacez le par index.php</p>
+        <p>Ajouter les lignes suivante à la fin du fichier :</p>
+        <pre><code class="language-php"><?php
+echo "Hello world";
+?></code></pre>
+    </section>
+
+    <section>
+        <h3>Installation</h3>
+        <pre><code class="language-shell">sudo aptitude install libapache2-mod-php5</code></pre>
+        <p>Activer le module :</p>
+        <pre><code class="language-shell">sudo a2enmod php5</code></pre>
+        <p>Redémarrer Apache :</p>
+        <pre><code class="language-shell">sudo service apache2 restart</code></pre>
+        <p>Vérifier l’état de la page PHP sur monsite.fr</p>
+    </section>
+
+    <section>
+        <h3>Configuration</h3>
+        <p>Voir le fichier /etc/php5/cli/php.ini</p>
+        <ul>
+            <li>display_errors</li>
+            <li>upload_max_filesize</li>
+            <li>max_execution_time</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>MySQL</h3>
+        <div class="container">
+            <div class="col">
+                <p>Système de Gestion de Base de Données Relationnelle</p>
+            </div>
+            <div class="col">
+                <img src="assets/images/mysql.png" alt="MySQL">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Autres SGBDR</h3>
+        <div class="container">
+            <div class="col">
+                <img src="assets/images/mariadb.png" alt="MariaDB">
+            </div>
+            <div class="col">
+                <img src="assets/images/oracle.png" alt="Oracle">
+            </div>
+        </div>
+        <div class="container">
+            <div class="col">
+                <img src="assets/images/sqlite.png" alt="SQLite">
+            </div>
+            <div class="col">
+                <img src="assets/images/sqlserver.png" alt="SQL Server">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Installation</h3>
+        <pre><code class="language-shell">sudo aptitude install mysql-server
+sudo aptitude install php5-mysql</code></pre>
+    </section>
+
+    <section>
+        <h3>PHPMyAdmin</h3>
+        <div class="container">
+            <div class="col">
+                <p>Gestionnaire de base de données</p>
+                <pre><code class="language-shell">sudo aptitude install phpmyadmin</code></pre>
+                <p>Ajouter l’extension mysqli dans le fichier php.ini :</p>
+                <pre><code class="language-apacheconf">extension=mysqli.so</code></pre>
+            </div>
+            <div class="col">
+                <img src="assets/images/phpmyadmin.svg" alt="PHPMyAdmin">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>FTP</h3>
+        <p>File Transfer Protocol</p>
+        <p>Installation de PureFTPD</p>
+        <pre><code class="language-shell">sudo aptitude install proftpd</code></pre>
+    </section>
+
+    <section>
+        <h3>FileZilla</h3>
+        <div class="container">
+            <div class="col">
+                <p><a href="https://filezilla-project.org/">https://filezilla-project.org/</a></p>
+                <ul>
+                    <li>Host : IP du serveur</li>
+                    <li>Username : user</li>
+                    <li>Password : user</li>
+                </ul>
+            </div>
+            <div class="col">
+                <img src="assets/images/filezilla.png" alt="FileZilla">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Configuration</h3>
+        <p>Décommenter la ligne dans le fichier de conf :</p>
+        <pre><code class="language-shell">vim /etc/proftpd/proftpd.conf</code></pre>
+        <pre><code class="language-shell">DefaultRoot ~</code></pre>
+        <p>Redémarrer proftpd :</p>
+        <pre><code class="language-shell">service proftpd restart</code></pre>
+        <p>On peut également changer le port de connexion</p>
+    </section>
+
+    <section>
+        <h3>Configuration</h3>
+        <p>Ajouter un utilisateur pour gérer monsite.fr</p>
+        <pre><code class="language-shell">adduser monsite --home /var/www/monsite</code></pre>
+        <p>Se connecter en FTP avec le nouvel utilisateur</p>
+        <hr>
+        <pre><code class="language-shell">sudo chown -R user:group /var/www/monsite</code></pre>
+    </section>
+
+    <section>
+        <h3>SSH</h3>
+        <p>Secure Shell</p>
+        <ul>
+            <li>Connexion sécurisée cryptée par un mot de passe.</li>
+            <li>Utilise un système de cryptage asymétrique</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Installation</h3>
+        <pre><code class="language-shell">aptitude install openssh-server</code></pre>
+        <pre><code class="language-shell">aptitude install openssh-client</code></pre>
+        <p>Windows : PuTTY</p>
+        <pre><code class="language-shell">ssh [user]@[server_ip]</code></pre>
+    </section>
+
+    <section>
+        <h3>Résumé</h3>
+        <img src="assets/images/http-request-final.png" alt="HTTP Request">
+    </section>
+
+    <section>
+        <h3>QCM</h3>
+        <p><a href="https://docs.google.com/forms/d/1qEgfb7kTrUenuw3N4UaENvOnE8sAuQkm5LPIID9Yidg/viewform" target="_blank">Serveur Web QCM 2</a></p>
+    </section>
+
+    <section>
+        <h3>Hosting Control Panel</h3>
+        <p>Interface d’administration pour serveur web</p>
+        <ul>
+            <li>Serveur web</li>
+            <li>Serveur mail</li>
+            <li>Serveur DNS</li>
+            <li>Serveur de fichiers</li>
+            <li>Gestion utilisateurs</li>
+            <li>Gestion bases de données</li>
+            <li>Etat du serveur</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>ISPConfig</h3>
+        <img src="assets/images/ispconfig.png" alt="ISPConfig">
+        <img src="assets/images/ispconfig-dashboard.png" alt="ISPConfig Dashboard" style="max-height: 50vh;">
+    </section>
+
+    <section>
+        <h3>cPanel</h3>
+        <img src="assets/images/cpanel.png" alt="cPanel">
+        <img src="assets/images/cpanel-dashboard.png" alt="cPanel Dashboard" style="max-height: 50vh;">
+    </section>
+
+    <section>
+        <h3>ISPConfig - Installation</h3>
+        <pre><code class="language-shell">wget http://www.ispconfig.org/downloads/ISPConfig-3-stable.tar.gz
+tar xfz ISPConfig-3-stable.tar.gz
+cd ispconfig3_install/install/
+php -q install.php
+</code></pre>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>Mettre en place un accès pour un client afin qu’il puisse uploader les fichiers de son site web et administrer une base de données.</p>
+    </section>
+
+</section>
