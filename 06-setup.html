@@ -148,6 +148,14 @@
     </section>
 
     <section>
+        <h3>Gestionnaire de paquets</h3>
+        <p>Nous allons commencer par mettre à jour le gestionnaire de paquets de Debian</p>
+        <pre><code class="language-shell">aptitude update # Met à jour la liste des paquets et leur version
+aptitude upgrade # Installe les nouvelles versions des paquets
+aptitude autoremove # Supprime les dépendances inutilisées</code></pre>
+    </section>
+
+    <section>
         <h3>Apache</h3>
         <p>Permet l’accès à des documents via le protocole HTTP</p>
         <canvas id="http-servers" style="height: 40vh;"></canvas>
@@ -187,12 +195,27 @@
         </ul>
     </section>
 
+
     <section>
         <h3>Configuration</h3>
-        <p>Activer un module :</p>
-        <pre><code class="language-shell">a2enmod [nom_du_module]</code></pre>
-        <p>Activer un site :</p>
-        <pre><code class="language-shell">a2ensite [nom_du_site]</code></pre>
+        <p>Le fichier <code class="language-shell">/etc/apache2/apache2.conf</code> contient la configuration globale d'Apache :</p>
+        <ul>
+            <li><strong>ServerRoot</strong> : Dossier contenant les fichiers de configuration et de logs d'Apache</li>
+            <li><strong>Timeout</strong> : Durée avant d'envoyer un délai dépassé</li>
+            <li><strong>LogLevel</strong> : Niveau de Log</li>
+            <li>...</li>
+            <li>Appel des autres fichiers de conf</li>
+        </ul>
+        <p>Le fichier <code class="language-shell">/etc/apache2/ports.conf</code> contient la liste des ports utilisés par Apache (par défaut 80 et 443 pour le SSL)</p>
+    </section>
+
+    <section>
+        <h3>Configuration</h3>
+        <p>L'activation des modules et des sites fonctionne à l'aide de liens symboliques et l'utilisation des commandes suivantes :</p>
+        <pre><code class="language-shell">a2enmod [nom_du_module] # Activer un module
+a2dismod [nom_du_module] # Désactiver un module</code></pre>
+        <pre><code class="language-shell">a2ensite [nom_du_site] # Activer un site
+a2dissite [nom_du_site] # Désactiver un site</code></pre>
         <hr>
         <p>Dans les 2 cas, penser à redémarrer Apache :</p>
         <pre><code class="language-shell">/etc/init.d/apache2 restart</code></pre>
@@ -209,6 +232,9 @@
         <pre><code class="language-shell">cd /etc/apache2/sites-available
 cp 000-default.conf monsite.com.conf
 vim monsite.com.conf</code></pre>
+        <footer>
+            <a href="#" class="info">Apache va lire les fichiers du dossier dans l'ordre alphabétique</a>
+        </footer>
     </section>
 
     <section>
